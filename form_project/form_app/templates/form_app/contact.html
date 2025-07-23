@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <form class="contact-form" method="POST">
+      {% csrf_token %} {{form.as_p}}
+      <button type="submit">Submit</button>
+      <a class="contact-back-home-button" href="{% url 'home' %}"
+        >Back to Home Page</a
+      >
+    </form>
+  </body>
+</html>
